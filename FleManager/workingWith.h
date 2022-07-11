@@ -11,6 +11,12 @@ public:
 
 	workingWith();
 
+	void setName(string name) { this->name = name; };
+	void setPach(string path) { this->path = path; };
+
+	string getName() { return name; };
+	string getPath() { return path; };
+	string getFullPath() { return fullPath; };
 
 	virtual int create() = 0;
 	virtual int rename() = 0;
