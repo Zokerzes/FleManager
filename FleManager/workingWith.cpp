@@ -1,8 +1,8 @@
 #include "workingWith.h"
 
-workingWith::workingWith()
+workingWith::workingWith(string name,string path)
 {
-	path = "none//";
-	name = "none";
-	fullPath=path+name;
+	this->path = path;
+	this->name = name;
+	this->fullPath=path+name;
 }

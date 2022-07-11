@@ -8,5 +8,7 @@ using namespace std;
 class Directory :
     public workingWith
 {
+    Directory();
+
 };
 

@@ -4,11 +4,14 @@
 #include <io.h>
 #include <string.h>
 #include <iostream>
+#include "File.h"
+#include "Directory.h"
+#include "workingWith.h"
 using namespace std;
 
 
 int main()
 {
-   
+	File f;
 }
 
