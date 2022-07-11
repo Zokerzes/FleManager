@@ -13,7 +13,7 @@ public:
     
     File();
 
-    virtual int create(string name)
+    /*virtual*/ int create(string name)
     {
         std::ofstream file{ name.c_str() };
         if (file.is_open()) return 0;
