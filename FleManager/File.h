@@ -38,7 +38,13 @@ public:
     };
     virtual int del(string name) {
         fullPath = selectObj + name;
-    
+        if (!remove(fullPath.c_str())) {
+            cout << "file " << name << " is deleted" << endl;
+            return 0;
+        }
+        return -1;
+
+        
     };
 };
 

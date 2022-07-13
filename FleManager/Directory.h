@@ -20,13 +20,22 @@ public:
        
     }
     virtual int rename_(string name) {
-        fullPath = myPath + this->name;
+        fullPath = myPath + this->name + "\\";
         string newPath = myPath + name + "\\";
         if (!(rename(fullPath.c_str(), newPath.c_str())))
         {
             return 0;
         }
         return -1;
+    };
+    virtual int del(string name) {
+        fullPath = selectObj + name /*+ "\\"*/;
+        if (!remove(fullPath.c_str())) {
+            cout << "file " << name << " is deleted" << endl;
+            return 0;
+        }
+        return -1;
+
 
     };
 };
