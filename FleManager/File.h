@@ -20,7 +20,7 @@ public:
         else { return -1; };
 
     }
-    /*virtual*/ int create(string name,string text)
+    int create(string name,string text)
     {
         std::ofstream file{ name.c_str() };
         file << text << endl;
@@ -43,8 +43,15 @@ public:
             return 0;
         }
         return -1;
-
-        
+    };
+    virtual int copy_(string oldPath, string newPath ) {
+        /*fullPath = myPath + oldPath;
+        string newPath = myPath + newPath;*/
+        if (!(rename(oldPath.c_str(), newPath.c_str())))
+        {
+            return 0;
+        }
+        return -1;
     };
 };
 

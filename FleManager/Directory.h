@@ -10,16 +10,17 @@ class Directory :
     public workingWith
 {
 public:
-   
+
     Directory();
 
-    virtual int create(string name) 
+    virtual int create(string name)
     {
 
-        return _mkdir((myPath+name).c_str());
-       
+        return _mkdir((myPath + name).c_str());
+
     }
-    virtual int rename_(string name) {
+    virtual int rename_(string name)
+    {
         fullPath = myPath + this->name + "\\";
         string newPath = myPath + name + "\\";
         if (!(rename(fullPath.c_str(), newPath.c_str())))
@@ -28,7 +29,8 @@ public:
         }
         return -1;
     };
-    virtual int del(string name) {
+    virtual int del(string name)
+    {
         fullPath = myPath + name;
         if (!_rmdir(fullPath.c_str())) {
             cout << "directory " << name << " is deleted" << endl;
@@ -36,5 +38,14 @@ public:
         }
         return -1;
     };
+    virtual int copy_(string oldPath, string newPath)
+    {
+        /*fullPath = myPath + oldPath;
+        string newPath = myPath + newPath;*/
+        if (!(rename(oldPath.c_str(), newPath.c_str())))
+        {
+            return 0;
+        }
+        return -1;
+    };
 };
-

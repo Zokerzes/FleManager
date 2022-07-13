@@ -22,9 +22,12 @@ int main()
 	cout << "fil_rn " << f.rename_("tes11.txt") << endl;
 	d.setName("d1");
 	cout << "dir_cr " << d.rename_("d2") << endl;
-	/*cout << "dir_dl " << */d.del("d2")/* << endl*/;
-	cout << "fil_cr " << f.create("tes2.txt") << endl;
-	/*cout << "fil_dl " << */f.del("tes2.txt")/* << endl*/;
+	d.del("d2");
+	//cout << "fil_cr " << f.create("U:\\FleManager\\FleManager\\tes2.txt") << endl;
+	///*f.del("tes2.txt");*/
+	//cout << "dir_cr " << d.create("U:\\FleManager\\FleManager\\d3") << endl;
+	//
+	//cout << "fil_rn " << f.copy_("U:\\FleManager\\FleManager\\tes2.txt","U:\\FleManager\\FleManager\\d3\\tes11.txt") << endl;
 
 }
 
