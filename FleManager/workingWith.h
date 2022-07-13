@@ -19,7 +19,8 @@ public:
 	string getPath()		{ return path; };
 	string getFullPath()	{ return fullPath; };
 
-	virtual int create() = 0;
+	virtual int create(string name) = 0;
+	virtual int create(string name, string text) = 0;
 	/*virtual int rename() = 0;
 	virtual int del() = 0;
 	virtual int copy() = 0;

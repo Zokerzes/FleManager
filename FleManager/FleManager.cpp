@@ -13,5 +13,7 @@ using namespace std;
 int main()
 {
 	File f;
+	cout<<f.create("tes1.txt");
+	cout << f.create("test.txt","some thing");
 }
 
