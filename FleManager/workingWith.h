@@ -25,8 +25,8 @@ public:
 	virtual int create(string) = 0;
 	//virtual int create(string name, string text) = 0;
 	virtual int rename_(string) = 0;
-	/*virtual int del() = 0;
-	virtual int copy() = 0;
+	virtual int del(string) = 0;
+	/*virtual int copy() = 0;
 	virtual int relocate() = 0;
 	virtual int whatSise() = 0;
 	virtual int find() = 0;*/

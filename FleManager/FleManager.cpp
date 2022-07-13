@@ -20,7 +20,8 @@ int main()
 	cout<< "dir_cr " << d.create("d1") << endl;
 	f.setName("tes1.txt");
 	cout << "fil_rn " << f.rename_("tes11.txt") << endl;
-
+	d.setName("d1");
+	cout << "dir_cr " << d.rename_("d2") << endl;
 
 
 }

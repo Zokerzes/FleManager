@@ -35,6 +35,9 @@ public:
             return 0;
         }
         return -1;
+    };
+    virtual int del(string name) {
+        fullPath = selectObj + name;
     
     };
 };

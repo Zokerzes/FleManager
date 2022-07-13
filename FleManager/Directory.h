@@ -20,9 +20,14 @@ public:
        
     }
     virtual int rename_(string name) {
+        fullPath = myPath + this->name;
+        string newPath = myPath + name + "\\";
+        if (!(rename(fullPath.c_str(), newPath.c_str())))
+        {
+            return 0;
+        }
+        return -1;
 
-
-        return 0;
     };
 };
 
