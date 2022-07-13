@@ -20,7 +20,7 @@ public:
         else { return -1; };
 
     }
-    virtual int create(string name,string text)
+    /*virtual*/ int create(string name,string text)
     {
         std::ofstream file{ name.c_str() };
         file << text << endl;

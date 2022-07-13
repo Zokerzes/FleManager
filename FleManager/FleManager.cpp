@@ -12,8 +12,11 @@ using namespace std;
 
 int main()
 {
+	
 	File f;
-	cout<<f.create("tes1.txt");
-	cout << f.create("test.txt","some thing");
+	Directory d;
+	cout<<f.create("tes1.txt")<<endl;
+	cout << f.create("test.txt","some thing") << endl;
+	cout<< d.create("d1") << endl;
 }
 

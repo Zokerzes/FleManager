@@ -20,7 +20,7 @@ public:
 	string getFullPath()	{ return fullPath; };
 
 	virtual int create(string name) = 0;
-	virtual int create(string name, string text) = 0;
+	//virtual int create(string name, string text) = 0;
 	/*virtual int rename() = 0;
 	virtual int del() = 0;
 	virtual int copy() = 0;
