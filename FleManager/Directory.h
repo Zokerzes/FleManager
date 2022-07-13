@@ -29,14 +29,12 @@ public:
         return -1;
     };
     virtual int del(string name) {
-        fullPath = selectObj + name /*+ "\\"*/;
-        if (!remove(fullPath.c_str())) {
-            cout << "file " << name << " is deleted" << endl;
+        fullPath = myPath + name;
+        if (!_rmdir(fullPath.c_str())) {
+            cout << "directory " << name << " is deleted" << endl;
             return 0;
         }
         return -1;
-
-
     };
 };
 
