@@ -10,7 +10,7 @@ class Directory :
     public workingWith
 {
 public:
-    string myPath = "U:\\FleManager\\FleManager\\";
+   
     Directory();
 
     virtual int create(string name) 
@@ -19,8 +19,10 @@ public:
         return _mkdir((myPath+name).c_str());
        
     }
-    /*virtual int create(string name, string text) {
-        return _mkdir((myPath + name).c_str());
-    };*/
+    virtual int rename_(string name) {
+
+
+        return 0;
+    };
 };
 

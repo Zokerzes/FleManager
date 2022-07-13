@@ -4,7 +4,7 @@
 #include <io.h>
 #include <string.h>
 #include <iostream>
-#include<fstream>
+#include <fstream>
 using namespace std;
 class File :
     public workingWith
@@ -26,7 +26,16 @@ public:
         file << text << endl;
         if (file.is_open()) return 0;
         else { return -1; };
-
     }
+    virtual int rename_(string name) {
+        fullPath = myPath + this->name;
+        string newPath = myPath + name;
+        if (!(rename(fullPath.c_str(), newPath.c_str()))) 
+        {
+            return 0;
+        }
+        return -1;
+    
+    };
 };
 

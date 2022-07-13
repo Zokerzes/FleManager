@@ -5,10 +5,13 @@ using namespace std;
 class workingWith
 {
 protected:
+
 	string fullPath;
 	string path;
 	string name;
 public:
+	string myPath = "U:\\FleManager\\FleManager\\";
+	string selectObj = "U:\\FleManager\\FleManager\\";
 	workingWith() {};
 	workingWith(string,string);
 
@@ -19,10 +22,10 @@ public:
 	string getPath()		{ return path; };
 	string getFullPath()	{ return fullPath; };
 
-	virtual int create(string name) = 0;
+	virtual int create(string) = 0;
 	//virtual int create(string name, string text) = 0;
-	/*virtual int rename() = 0;
-	virtual int del() = 0;
+	virtual int rename_(string) = 0;
+	/*virtual int del() = 0;
 	virtual int copy() = 0;
 	virtual int relocate() = 0;
 	virtual int whatSise() = 0;
