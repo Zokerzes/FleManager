@@ -21,7 +21,7 @@ public:
     }
     virtual int rename_(string oldname, string name)
     {
-        fullPath = myPath + this->name + "\\";
+        fullPath = myPath + oldname + "\\";
         string newPath = myPath + name + "\\";
         if (!(rename(fullPath.c_str(), newPath.c_str())))
         {

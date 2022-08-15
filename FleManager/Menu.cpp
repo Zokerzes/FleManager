@@ -48,7 +48,10 @@ Menu::Menu()
 			f.rename_(select, userInput());
 			break;
 		case 'R':
-			cout << "R";
+			cout << "enter old filename\n";
+			select = userInput();
+			cout << "enter new filename\n";
+			d.rename_(select, userInput());
 			break;
 		case 'd':
 			cout << "d";
