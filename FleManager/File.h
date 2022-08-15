@@ -27,8 +27,8 @@ public:
         if (file.is_open()) return 0;
         else { return -1; };
     }
-    virtual int rename_(string name) {
-        fullPath = myPath + this->name;
+    virtual int rename_(string oldname, string name) {
+        fullPath = myPath + oldname;
         string newPath = myPath + name;
         if (!(rename(fullPath.c_str(), newPath.c_str()))) 
         {

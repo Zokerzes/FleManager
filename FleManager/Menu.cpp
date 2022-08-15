@@ -7,6 +7,13 @@
 #include <fstream>
 #include "Menu.h"
 
+string Menu::userInput()
+{
+	string uI;
+	cin >> uI;
+	return uI;
+}
+
 Menu::Menu()
 {
 	
@@ -27,14 +34,18 @@ Menu::Menu()
 		switch (mChoise)
 		{// убрать заглушки
 		case 'o':
-			cout << "o";
+			cout << "enter file name\n";
+			f.create(userInput());
 			break;
-
 		case 'O':
-			cout << "O";
+			cout << "enter directory name\n";
+			d.create(userInput());
 			break;
 		case 'r':
-			cout << "r";
+			cout << "enter old filename\n";
+			select = userInput();
+			cout << "enter new filename\n";
+			f.rename_(select, userInput());
 			break;
 		case 'R':
 			cout << "R";

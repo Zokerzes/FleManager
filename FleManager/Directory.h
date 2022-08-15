@@ -19,7 +19,7 @@ public:
         return _mkdir((myPath + name).c_str());
 
     }
-    virtual int rename_(string name)
+    virtual int rename_(string oldname, string name)
     {
         fullPath = myPath + this->name + "\\";
         string newPath = myPath + name + "\\";
