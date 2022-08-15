@@ -5,6 +5,7 @@
 #include <string.h>
 #include <iostream>
 #include <fstream>
+#include <conio.h>
 class Menu
 {
 public:
