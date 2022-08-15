@@ -23,7 +23,7 @@ Menu::Menu()
 		do
 		{
 			system("cls");
-			cout << "*********** FLeMANAGER ***********" << endl << endl;
+			cout << "************** FLeMAN **************" << endl << endl;
 			cout << "(o) CREATE FILE" << endl << "(O) CREATE DIRECTORY" << endl << "(r) RENAME FILE" << endl << "(R) RENAME DIRECTORY"
 				<< endl << "(d) DELETE FILE" << endl << "(D) DELETE DIRECTORY" << endl << "(c) COPY FILE" << endl << "(C) COPY DIRECTORY" 
 				<< endl << "(f) FIND FILE" << endl << "(F) FIND DIRECTORY" << endl << "(0) EXIT" << endl << endl;
