@@ -19,34 +19,34 @@ int main()
 	
 	//File f;
 	//Directory d;
-	//Menu menu;
+	Menu menu;
 	// Получаем текущий путь процесса (a.k.a. working directory)
 	//const fs::path workdir = fs::current_path();
 	//cout << workdir<<endl;
 	//fs::create_directories("U:\\FleManager\\FleManager\\112"); //worcked!!
-	std::vector<fs::path> paths = {
-		"U:\\FleManager\\FleManager\\112\\1.txt",
-		"U:\\FleManager\\FleManager\\112\\2.txt",
-		"U:\\FleManager\\FleManager\\112\\3.dat",
-		"U:\\FleManager\\FleManager\\112\\4.dat"
-	};
-	for (const auto& filepath : paths)
-	{
-		// В C++17 конструктор fstream принимает как string, так и wstring,
-		//  это упрощает кроссплатформенное конструирование его из path
-		std::ofstream(filepath.native()) << "test";
-	}
+	//std::vector<fs::path> paths = {
+	//	"U:\\FleManager\\FleManager\\112\\1.txt",
+	//	"U:\\FleManager\\FleManager\\112\\2.txt",
+	//	"U:\\FleManager\\FleManager\\112\\3.dat",
+	//	"U:\\FleManager\\FleManager\\112\\4.dat"
+	//};
+	//for (const auto& filepath : paths)
+	//{
+	//	// В C++17 конструктор fstream принимает как string, так и wstring,
+	//	//  это упрощает кроссплатформенное конструирование его из path
+	//	std::ofstream(filepath.native()) << "test";
+	//}
 
-	fs::recursive_directory_iterator begin("data");
-	fs::recursive_directory_iterator end;
-	// Получаем список подкаталогов с помощью алгоритма copy_if
-	std::vector<fs::path> subdirs;
-	std::copy_if(begin, end, std::back_inserter(subdirs), [](const fs::path& path) {
-		return fs::is_directory(path);
-		});
-	// Выводим список подкаталогов в cout.
-	std::cout << "-- subdirs --" << std::endl;
-	std::copy(subdirs.begin(), subdirs.end(), std::ostream_iterator<fs::path>(std::cout, "\n"));
+	//fs::recursive_directory_iterator begin("data");
+	//fs::recursive_directory_iterator end;
+	//// Получаем список подкаталогов с помощью алгоритма copy_if
+	//std::vector<fs::path> subdirs;
+	//std::copy_if(begin, end, std::back_inserter(subdirs), [](const fs::path& path) {
+	//	return fs::is_directory(path);
+	//	});
+	//// Выводим список подкаталогов в cout.
+	//std::cout << "-- subdirs --" << std::endl;
+	//std::copy(subdirs.begin(), subdirs.end(), std::ostream_iterator<fs::path>(std::cout, "\n"));
 
 
 
