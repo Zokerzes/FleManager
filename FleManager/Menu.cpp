@@ -18,21 +18,43 @@ Menu::Menu()
 {
 	
 	char mChoise, exit;
+	string tUI;
+	bool flagStart = 0;
 	do
 	{
 		do
 		{
-			system("cls");
+			if (!flagStart) {
+				flagStart = true;
+				system("cls");
+			}
 			cout << "************** FLeMAN **************" << endl << endl;
-			cout << "(o) CREATE FILE" << endl << "(O) CREATE DIRECTORY" << endl << "(r) RENAME FILE" << endl << "(R) RENAME DIRECTORY"
+			cout << "(i) DIR" << endl << "(s) GO TO PATH" << endl << "(o) CREATE FILE" << endl << "(O) CREATE DIRECTORY" << endl << "(r) RENAME FILE" << endl << "(R) RENAME DIRECTORY"
 				<< endl << "(d) DELETE FILE" << endl << "(D) DELETE DIRECTORY" << endl << "(c) COPY FILE" << endl << "(C) COPY DIRECTORY" 
 				<< endl << "(f) FIND FILE" << endl << "(F) FIND DIRECTORY" << endl << "(0) EXIT" << endl << endl;
 			mChoise = _getch();
-		} while (mChoise != 'o' && mChoise != 'O' && mChoise != 'r' && mChoise != 'R' && mChoise != 'd' && mChoise != 'D' 
+		} while (mChoise != 'i' && mChoise != 's' && mChoise != 'o' && mChoise != 'O' && mChoise != 'r' && mChoise != 'R' && mChoise != 'd' && mChoise != 'D'
 			&& mChoise != 'c' && mChoise != 'C' && mChoise != 'f' && mChoise != 'F' && mChoise != '0' );
 
 		switch (mChoise)
 		{// убрать заглушки
+		case 'i':
+			tUI ="dir "+ f.myPath+"\\";
+
+			system(tUI.c_str());
+			break;
+		case 's':
+			cout << "enter path\n";
+			f.myPath = userInput();
+			d.myPath = f.myPath;
+			tUI= "dir " + f.myPath;
+			system(tUI.c_str());
+			/*tUI= userInput();
+			tUI = "cd " + tUI;
+			cout << tUI << endl;
+			system(tUI.c_str());
+			system("dir ");*/
+			break;
 		case 'o':
 			cout << "enter file name\n";
 			f.create(userInput());
@@ -46,18 +68,22 @@ Menu::Menu()
 			select = userInput();
 			cout << "enter new filename\n";
 			f.rename_(select, userInput());
+			/*tUI = "dir " + f.myPath;
+			system(tUI.c_str());*/
 			break;
 		case 'R':
-			cout << "enter old filename\n";
+			cout << "enter old directory name\n";
 			select = userInput();
-			cout << "enter new filename\n";
+			cout << "enter new directory name\n";
 			d.rename_(select, userInput());
 			break;
 		case 'd':
-			cout << "d";
+			cout << "enter file name to delite\n";
+			f.del(userInput());
 			break;
 		case 'D':
-			cout << "D";
+			cout << "enter dir name to delite\n";
+			d.del(userInput());
 			break;
 		case 'c':
 			cout << "c";
@@ -76,9 +102,10 @@ Menu::Menu()
 			cout << "exit";
 			break;
 		}
-		cout << endl << "Do you want go to menu or exit? (1 - yes, 0 - no)" << endl;
+		/*cout << endl << "Do you want go to menu or exit? (1 - yes, 0 - no)" << endl;
 		fflush(stdin);
-		exit = _getch();
+		exit = _getch();*/
+		exit = mChoise;
 	} while (exit != '0');
 	
 }

@@ -15,10 +15,15 @@ public:
 
     virtual int create(string name)
     {
-        std::ofstream file{ name.c_str() };
+       
+        string tUI = "NUL > " + myPath + "\\"+ name;
+        system(tUI.c_str());
+        
+        
+        /*std::ofstream file{ name.c_str() };
         if (file.is_open()) return 0;
-        else { return -1; };
-
+        else { return -1; };*/
+        return 0;
     }
     int create(string name,string text)
     {
@@ -28,21 +33,30 @@ public:
         else { return -1; };
     }
     virtual int rename_(string oldname, string name) {
-        fullPath = myPath + oldname;
+        string tUI = "ren " + myPath + "\\" + oldname+" "+name;
+        system(tUI.c_str());
+        
+        
+        /*fullPath = myPath + oldname;
         string newPath = myPath + name;
         if (!(rename(fullPath.c_str(), newPath.c_str()))) 
         {
             return 0;
         }
-        return -1;
+        return -1;*/
+        return 0;
     };
     virtual int del(string name) {
-        fullPath = selectObj + name;
+
+        string tUI = "del " + myPath + "\\" + name;
+        system(tUI.c_str());
+
+       /* fullPath = myPath + name;
         if (!remove(fullPath.c_str())) {
             cout << "file " << name << " is deleted" << endl;
             return 0;
-        }
-        return -1;
+        }*/
+        return 0;
     };
     virtual int copy_(string oldPath, string newPath ) {
         /*fullPath = myPath + oldPath;

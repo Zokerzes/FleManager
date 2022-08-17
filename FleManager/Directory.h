@@ -15,28 +15,36 @@ public:
 
     virtual int create(string name)
     {
-
-        return _mkdir((myPath + name).c_str());
+        string tUI = "mkdir " + myPath + "\\"+ name;
+        system(tUI.c_str());
+        return 0;
+        //_mkdir((myPath + "\\" + name).c_str());
 
     }
     virtual int rename_(string oldname, string name)
     {
-        fullPath = myPath + oldname + "\\";
+
+        string tUI = "ren " + myPath + "\\" + oldname + " " + name;
+        system(tUI.c_str());
+        /*fullPath = myPath + oldname + "\\";
         string newPath = myPath + name + "\\";
         if (!(rename(fullPath.c_str(), newPath.c_str())))
         {
             return 0;
-        }
-        return -1;
+        }*/
+        return 0;
     };
     virtual int del(string name)
     {
-        fullPath = myPath + name;
+
+        string tUI = "rd " + myPath + "\\" + name;
+        system(tUI.c_str());
+        /*fullPath = myPath + name;
         if (!_rmdir(fullPath.c_str())) {
             cout << "directory " << name << " is deleted" << endl;
             return 0;
-        }
-        return -1;
+        }*/
+        return 0;
     };
     virtual int copy_(string oldPath, string newPath)
     {
