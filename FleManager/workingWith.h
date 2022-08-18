@@ -10,8 +10,8 @@ protected:
 	string path;
 	string name;
 public:
-	string myPath = "U:\\FleManager\\FleManager";
-	string selectObj = "U:\\FleManager\\FleManager";
+	string myPath = "d:\\itSteps\\Fle";
+	string selectObj = "d:\\itSteps\\Fle";
 	workingWith() {};
 	workingWith(string,string);
 

@@ -16,13 +16,13 @@ public:
     virtual int create(string name)
     {
        
-        string tUI = "NUL > " + myPath + "\\"+ name;
-        system(tUI.c_str());
+       /* string tUI = "NUL > " + myPath + "\\"+ name;
+        system(tUI.c_str());*/
         
-        
-        /*std::ofstream file{ name.c_str() };
+        name =myPath + "\\" + name;
+        std::ofstream file{ name.c_str() };
         if (file.is_open()) return 0;
-        else { return -1; };*/
+        else { return -1; };
         return 0;
     }
     int create(string name,string text)
