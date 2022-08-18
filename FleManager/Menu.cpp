@@ -32,7 +32,7 @@ Menu::Menu()
 			cout << "************** FLeMAN **************" << endl << endl;
 			cout << "(i) DIR" << endl << "(s) GO TO PATH" << endl << "(o) CREATE FILE" << endl << "(O) CREATE DIRECTORY" << endl << "(r) RENAME FILE" << endl << "(R) RENAME DIRECTORY"
 				<< endl << "(d) DELETE FILE" << endl << "(D) DELETE DIRECTORY" << endl << "(c) COPY FILE" << endl << "(C) COPY DIRECTORY" 
-				<< endl << "(m) SIZE FILE" << endl << "(M) SIZE  DIRECTORY"
+				<< endl << "(m) SIZE FILE" 
 				<< endl << "(f) FIND FILE" << endl << "(F) FIND DIRECTORY" << endl << "(0) EXIT" << endl << endl;
 			mChoise = _getch();
 		} while (mChoise != 'm' && mChoise != 'M' && mChoise != 'i' && mChoise != 's' && mChoise != 'o' && mChoise != 'O' && mChoise != 'r' && mChoise != 'R' && mChoise != 'd' && mChoise != 'D'
