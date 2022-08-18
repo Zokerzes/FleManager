@@ -39,7 +39,7 @@ Menu::Menu()
 			&& mChoise != 'c' && mChoise != 'C' && mChoise != 'f' && mChoise != 'F' && mChoise != '0' );
 
 		switch (mChoise)
-		{// убрать заглушки
+		{
 		case 'i':
 			tUI ="dir "+ f.myPath+"\\";
 
@@ -51,11 +51,7 @@ Menu::Menu()
 			d.myPath = f.myPath;
 			tUI= "dir " + f.myPath;
 			system(tUI.c_str());
-			/*tUI= userInput();
-			tUI = "cd " + tUI;
-			cout << tUI << endl;
-			system(tUI.c_str());
-			system("dir ");*/
+			
 			break;
 		case 'o':
 			cout << "enter file name\n";
@@ -70,8 +66,7 @@ Menu::Menu()
 			select = userInput();
 			cout << "enter new filename\n";
 			f.rename_(select, userInput());
-			/*tUI = "dir " + f.myPath;
-			system(tUI.c_str());*/
+			
 			break;
 		case 'R':
 			cout << "enter old directory name\n";
@@ -116,9 +111,7 @@ Menu::Menu()
 			cout << "exit";
 			break;
 		}
-		/*cout << endl << "Do you want go to menu or exit? (1 - yes, 0 - no)" << endl;
-		fflush(stdin);
-		exit = _getch();*/
+		
 		exit = mChoise;
 	} while (exit != '0');
 	

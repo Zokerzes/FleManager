@@ -22,17 +22,11 @@ int main()
 {
 	
 	
-	//File f;
-	//Directory d;
+	
 	Menu menu;
 
    
-	/*string a,b,c;
-	a = "d:\\itSteps\\Fle\\FleManager\\";
-	b= "Menu.h";
-	c = a + b;
-	cout<< fs::file_size(c)<<" Bite";
-	*/
+	
 	return 0;
 }
 
