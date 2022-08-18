@@ -3,13 +3,17 @@
 #include <stdio.h>
 //Здесь находятся функции для поиска файлов
 #include <io.h>
-#include <string.h>
+#include <string>
 #include <iostream>
 #include "File.h"
 #include "Directory.h"
 #include "workingWith.h"
 #include "Menu.h"
 #include <experimental/filesystem>
+#include <stdio.h>
+#include <stdlib.h>
+
+
 
 using namespace std;
 namespace fs = std::experimental::filesystem;
@@ -21,6 +25,14 @@ int main()
 	//File f;
 	//Directory d;
 	Menu menu;
+
+   
+	/*string a,b,c;
+	a = "d:\\itSteps\\Fle\\FleManager\\";
+	b= "Menu.h";
+	c = a + b;
+	cout<< fs::file_size(c)<<" Bite";
+	*/
 	return 0;
 }
 

@@ -16,7 +16,8 @@ string Menu::userInput()
 
 Menu::Menu()
 {
-	
+	f.myPath;
+	d.myPath = f.myPath;
 	char mChoise, exit;
 	string tUI;
 	bool flagStart = 0;
@@ -31,9 +32,10 @@ Menu::Menu()
 			cout << "************** FLeMAN **************" << endl << endl;
 			cout << "(i) DIR" << endl << "(s) GO TO PATH" << endl << "(o) CREATE FILE" << endl << "(O) CREATE DIRECTORY" << endl << "(r) RENAME FILE" << endl << "(R) RENAME DIRECTORY"
 				<< endl << "(d) DELETE FILE" << endl << "(D) DELETE DIRECTORY" << endl << "(c) COPY FILE" << endl << "(C) COPY DIRECTORY" 
+				<< endl << "(m) SIZE FILE" << endl << "(M) SIZE  DIRECTORY"
 				<< endl << "(f) FIND FILE" << endl << "(F) FIND DIRECTORY" << endl << "(0) EXIT" << endl << endl;
 			mChoise = _getch();
-		} while (mChoise != 'i' && mChoise != 's' && mChoise != 'o' && mChoise != 'O' && mChoise != 'r' && mChoise != 'R' && mChoise != 'd' && mChoise != 'D'
+		} while (mChoise != 'm' && mChoise != 'M' && mChoise != 'i' && mChoise != 's' && mChoise != 'o' && mChoise != 'O' && mChoise != 'r' && mChoise != 'R' && mChoise != 'd' && mChoise != 'D'
 			&& mChoise != 'c' && mChoise != 'C' && mChoise != 'f' && mChoise != 'F' && mChoise != '0' );
 
 		switch (mChoise)
@@ -105,6 +107,11 @@ Menu::Menu()
 			d.find(userInput());
 			break;
 
+		case 'm':
+			cout << "enter file name\n";
+			f.whatSise(userInput());
+			break;
+		
 		case '0':
 			cout << "exit";
 			break;

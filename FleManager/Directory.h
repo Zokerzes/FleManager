@@ -1,3 +1,4 @@
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 #pragma once
 #include "workingWith.h"
 #include <stdio.h>
@@ -5,6 +6,8 @@
 #include <string.h>
 #include <iostream>
 #include <direct.h>
+#include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
 using namespace std;
 class Directory :
     public workingWith
@@ -58,6 +61,11 @@ public:
     virtual int find(string name) {
         string tUI = "dir /s  " + myPath + "\\" + name;
         system(tUI.c_str());
+        return 0;
+    };
+    virtual int whatSise(string) {
+    
+    
         return 0;
     };
 };

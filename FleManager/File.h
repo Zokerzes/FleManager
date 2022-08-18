@@ -1,3 +1,4 @@
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 #pragma once
 #include "workingWith.h"
 #include <stdio.h>
@@ -5,6 +6,8 @@
 #include <string.h>
 #include <iostream>
 #include <fstream>
+#include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
 using namespace std;
 class File :
     public workingWith
@@ -79,5 +82,18 @@ public:
         system(tUI.c_str());
         return 0;
     };
+    virtual int whatSise(string name) {
+        //string tUI = myPath + "\\" + name;
+
+        string a, b, c; //костыль к file_size: в одну строку не работает
+        a = myPath;
+        b = "\\";
+        c = a + b + name;
+        cout << fs::file_size(c) << " Bite\n\n";
+        //cout << fs::file_size(tUI)<<" Bite";
+    
+        return 0;
+    };
+
 };
 
