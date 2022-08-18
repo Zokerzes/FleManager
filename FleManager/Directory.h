@@ -1,3 +1,4 @@
+#define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 #pragma once
 #include "workingWith.h"
 #include <stdio.h>
@@ -5,6 +6,8 @@
 #include <string.h>
 #include <iostream>
 #include <direct.h>
+#include <experimental/filesystem>
+namespace fs = std::experimental::filesystem;
 using namespace std;
 class Directory :
     public workingWith
@@ -15,37 +18,45 @@ public:
 
     virtual int create(string name)
     {
-
-        return _mkdir((myPath + name).c_str());
+        string tUI = "mkdir " + myPath + "\\"+ name;
+        system(tUI.c_str());
+        return 0;
+       
 
     }
     virtual int rename_(string oldname, string name)
     {
-        fullPath = myPath + oldname + "\\";
-        string newPath = myPath + name + "\\";
-        if (!(rename(fullPath.c_str(), newPath.c_str())))
-        {
-            return 0;
-        }
-        return -1;
+
+        string tUI = "ren " + myPath + "\\" + oldname + " " + name;
+        system(tUI.c_str());
+       
+        return 0;
     };
     virtual int del(string name)
     {
-        fullPath = myPath + name;
-        if (!_rmdir(fullPath.c_str())) {
-            cout << "directory " << name << " is deleted" << endl;
-            return 0;
-        }
-        return -1;
+
+        string tUI = "rd " + myPath + "\\" + name;
+        system(tUI.c_str());
+       
+        return 0;
     };
-    virtual int copy_(string oldPath, string newPath)
-    {
-        /*fullPath = myPath + oldPath;
-        string newPath = myPath + newPath;*/
-        if (!(rename(oldPath.c_str(), newPath.c_str())))
-        {
-            return 0;
-        }
-        return -1;
+    virtual int copy_(string oldname, string name) {
+
+        string tUI = "xcopy " + myPath + "\\" + oldname + " " + name + " /e";
+        system(tUI.c_str());
+
+
+
+        return 0;
+    };
+    virtual int find(string name) {
+        string tUI = "dir /s  " + myPath + "\\" + name;
+        system(tUI.c_str());
+        return 0;
+    };
+    virtual int whatSise(string) {
+    
+    
+        return 0;
     };
 };

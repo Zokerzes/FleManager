@@ -10,8 +10,8 @@ protected:
 	string path;
 	string name;
 public:
-	string myPath = "U:\\FleManager\\FleManager\\";
-	string selectObj = "U:\\FleManager\\FleManager\\";
+	string myPath = "d:\\itSteps\\Fle";
+	string selectObj = "d:\\itSteps\\Fle";
 	workingWith() {};
 	workingWith(string,string);
 
@@ -23,13 +23,11 @@ public:
 	string getFullPath()	{ return fullPath; };
 
 	virtual int create(string) = 0;
-	//virtual int create(string name, string text) = 0;
 	virtual int rename_(string,string) = 0;
 	virtual int del(string) = 0;
 	virtual int copy_(string,string) = 0;
-	/*virtual int relocate() = 0;
-	virtual int whatSise() = 0;
-	virtual int find() = 0;*/
+	virtual int whatSise(string) = 0;
+	virtual int find(string) = 0;
 
 };
 
