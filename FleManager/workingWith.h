@@ -28,8 +28,8 @@ public:
 	virtual int del(string) = 0;
 	virtual int copy_(string,string) = 0;
 	/*virtual int relocate() = 0;
-	virtual int whatSise() = 0;
-	virtual int find() = 0;*/
+	virtual int whatSise() = 0;*/
+	virtual int find(string) = 0;
 
 };
 

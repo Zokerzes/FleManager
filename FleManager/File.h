@@ -25,13 +25,14 @@ public:
         else { return -1; };
         return 0;
     }
-    int create(string name,string text)
+    //not use
+    /*int create(string name,string text)
     {
         std::ofstream file{ name.c_str() };
         file << text << endl;
         if (file.is_open()) return 0;
         else { return -1; };
-    }
+    }*/
     virtual int rename_(string oldname, string name) {
         string tUI = "ren " + myPath + "\\" + oldname+" "+name;
         system(tUI.c_str());
@@ -58,14 +59,25 @@ public:
         }*/
         return 0;
     };
-    virtual int copy_(string oldPath, string newPath ) {
+    virtual int copy_(string oldname, string name) {
+       
+        string tUI = "copy " + myPath + "\\" + oldname + " " + name;
+        system(tUI.c_str());
+        
+        
+        
         /*fullPath = myPath + oldPath;
-        string newPath = myPath + newPath;*/
+        string newPath = myPath + newPath;
         if (!(rename(oldPath.c_str(), newPath.c_str())))
         {
             return 0;
-        }
-        return -1;
+        }*/
+        return 0;
+    };
+    virtual int find(string name) {
+        string tUI = "dir /s  " + myPath + "\\" + name;
+        system(tUI.c_str());
+        return 0;
     };
 };
 

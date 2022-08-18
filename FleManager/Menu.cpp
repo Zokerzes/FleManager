@@ -86,16 +86,23 @@ Menu::Menu()
 			d.del(userInput());
 			break;
 		case 'c':
-			cout << "c";
+			cout << "enter filename\n";
+			select = userInput();
+			cout << "enter new full path \n";
+			f.copy_(select, userInput());
 			break;
 		case 'C':
-			cout << "C";
-			break;
+			cout << "enter directory name\n";
+			select = userInput();
+			cout << "enter new full path \n";
+			d.copy_(select, userInput());
 		case 'f':
-			cout << "f";
+			cout << "enter text to find\n";
+			f.find(userInput());
 			break;
 		case 'F':
-			cout << "F";
+			cout << "enter text to find\n";
+			d.find(userInput());
 			break;
 
 		case '0':

@@ -46,14 +46,18 @@ public:
         }*/
         return 0;
     };
-    virtual int copy_(string oldPath, string newPath)
-    {
-        /*fullPath = myPath + oldPath;
-        string newPath = myPath + newPath;*/
-        if (!(rename(oldPath.c_str(), newPath.c_str())))
-        {
-            return 0;
-        }
-        return -1;
+    virtual int copy_(string oldname, string name) {
+
+        string tUI = "xcopy " + myPath + "\\" + oldname + " " + name + " /e";
+        system(tUI.c_str());
+
+
+
+        return 0;
+    };
+    virtual int find(string name) {
+        string tUI = "dir /s  " + myPath + "\\" + name;
+        system(tUI.c_str());
+        return 0;
     };
 };
